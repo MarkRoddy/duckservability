@@ -18,3 +18,10 @@ jobs:
 
       # Build the Schema
       - run: dbt build
+
+        
+      - name: Archive the generated duckdb file
+        uses: actions/upload-artifact@v3
+        with:
+          name: duckservability.duckdb
+          path: build/duckservability.duckdb
