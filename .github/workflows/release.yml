@@ -23,12 +23,8 @@ jobs:
       # Build the Schema
       - run: dbt build
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: Release
+        uses: softprops/action-gh-release@v1
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Automatic Build"
           files: |
             build/duckservability.duckdb
-
