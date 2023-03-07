@@ -1,0 +1,6 @@
+duckservability:
+  outputs:
+    dev:
+      type: duckdb
+      path: ./build/duckservability.duckdb
+  target: dev
