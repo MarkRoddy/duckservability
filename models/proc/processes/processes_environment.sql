@@ -8,7 +8,7 @@ FROM (
   SELECT
   filename,
     str_split(unnest(str_split(column0, chr(0))), '=') AS env_pair
-  FROM read_csv_auto('/proc/[0-9]*/environ', header=False, filename=true, delim='\0')
+  FROM read_csv('/proc/[0-9]*/environ', header=False, filename=true, delim='\0', columns={column0: 'VARCHAR'})
 )
 WHERE Name != ''
 ORDER BY PID, Name
