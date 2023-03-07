@@ -6,7 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
-      # todo: pin this + align the duckdb python version with the version of duckdb we download
       - run: pip install -r requirements.txt
       - run: which dbt
 
