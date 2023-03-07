@@ -1,0 +1,23 @@
+name: duckservability
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      - run: pip install -r requirements.txt
+      - run: which dbt
+
+      # Install DuckDB      
+      - run: ./bin/install-duckdb.sh
+
+      # Build the Schema
+      - run: dbt build
+
+      # Upload the generated duckdb file
+      - name: Archive the generated duckdb file
+        uses: actions/upload-artifact@v3
+        with:
+          name: duckservability.duckdb
+          path: build/duckservability.duckdb
