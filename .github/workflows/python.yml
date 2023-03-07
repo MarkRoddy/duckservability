@@ -4,7 +4,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@
+      - run: pip3 install dbt-core dbt-duckdb
+
+      # Install DuckDB
       - run: curl -LO 'https://github.com/duckdb/duckdb/releases/download/v0.7.1/duckdb_cli-linux-amd64.zip'
       - run: unzip duckdb_cli-linux-amd64.zip
       - run: ./duckdb --version
+
+      # Build the Schema
+      - run: dbt build
