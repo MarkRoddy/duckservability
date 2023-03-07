@@ -12,7 +12,8 @@ jobs:
       # Install DuckDB
       - run: curl -LO 'https://github.com/duckdb/duckdb/releases/download/v0.7.1/duckdb_cli-linux-amd64.zip'
       - run: unzip duckdb_cli-linux-amd64.zip
-      - run: ./duckdb --version
+      - run: mkdir -p ~/.local/bin/ && mv duckdb ~/.local/bin/ && rm duckdb_cli-linux-amd64.zip
+      - run: duckdb --version
 
       # Build the Schema
       - run: dbt build
