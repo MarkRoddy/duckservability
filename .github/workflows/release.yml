@@ -23,6 +23,9 @@ jobs:
       # Build the Schema
       - run: dbt build
 
+      # Package the Example Queries
+      - run: zip build/example-queries.zip example-queries/*.sql
+
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
@@ -31,3 +34,4 @@ jobs:
           title: "Automatic Build"
           files: |
             build/duckservability.duckdb
+            example-queries/*
