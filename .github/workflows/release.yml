@@ -34,4 +34,4 @@ jobs:
           title: "Automatic Build"
           files: |
             build/duckservability.duckdb
-            example-queries/*
+            build/example-queries.zip
