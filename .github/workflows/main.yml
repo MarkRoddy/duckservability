@@ -16,7 +16,7 @@ jobs:
       - run: dbt build
 
       # Package the Example Queries
-      - run: zip build/example-queries.zip example-queries/*.sql
+      - run: zip build/duckservability-example-queries.zip example-queries/*.sql
         
       # Upload the generated duckdb file
       - name: Archive the generated duckdb file
@@ -28,4 +28,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: duckservability.duckdb
-          path: build/example-queries.zip
+          path: build/duckservability-example-queries.zip

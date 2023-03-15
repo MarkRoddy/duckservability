@@ -24,7 +24,7 @@ jobs:
       - run: dbt build
 
       # Package the Example Queries
-      - run: zip build/example-queries.zip example-queries/*.sql
+      - run: zip build/duckservability-example-queries.zip example-queries/*.sql
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
@@ -34,4 +34,4 @@ jobs:
           title: "Automatic Build"
           files: |
             build/duckservability.duckdb
-            build/example-queries.zip
+            build/duckservability-example-queries.zip
