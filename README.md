@@ -22,7 +22,7 @@ Query processes that have performed the most IO operation in megabytes:
 ![most io](images/process-most-io.png)
 
 ## Longest Running Proccesses by CPU Time
-![most cpu time](processes-most-cpu-time.png)
+![most cpu time](images/processes-most-cpu-time.png)
 
 # Production Usage
 Duckservability is presently in a proof of concept state. If you're looking for a more mature SQL system for querying OS data, take a look at the [osquery](https://github.com/osquery/osquery) project.
