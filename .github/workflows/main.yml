@@ -20,12 +20,12 @@ jobs:
         
       # Upload the generated duckdb file
       - name: Archive the generated duckdb file
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: duckservability.duckdb
           path: build/duckservability.duckdb
       - name: Archive the Example Queries zip file
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: duckservability.duckdb
           path: build/duckservability-example-queries.zip
